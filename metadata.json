@@ -1,0 +1,6 @@
+{
+  "name": "NETFLOW - Educational Social Media",
+  "description": "Connect. Discover. Learn. Grow. The premier educational social network for students, teachers, institutions, and knowledge creators with AI learning assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#060913" />
+    </linearGradient>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background with safe zone -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="124" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4" />
+
+  <!-- Flow network rings -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="rgba(37, 99, 235, 0.15)" stroke-width="2" stroke-dasharray="8 8" />
+  <circle cx="256" cy="256" r="130" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="2" />
+
+  <!-- NETFLOW 'N' Symbol with Connected Nodes -->
+  <g filter="url(#glow)">
+    <!-- Diagonal and vertical flow curves -->
+    <path d="M160 360 L160 160 Q160 148 174 154 L338 348 Q352 354 352 342 L352 152" 
+          fill="none" 
+          stroke="url(#flowGrad)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Connected Knowledge Nodes -->
+    <circle cx="160" cy="152" r="18" fill="#38bdf8" />
+    <circle cx="160" cy="360" r="18" fill="#2563eb" />
+    <circle cx="352" cy="152" r="18" fill="#60a5fa" />
+    <circle cx="352" cy="360" r="18" fill="#4f46e5" />
+    <circle cx="256" cy="256" r="14" fill="#ffffff" />
+  </g>
+
+  <!-- Inner Spark / Sparkle of Discovery -->
+  <polygon points="256,220 264,248 292,256 264,264 256,292 248,264 220,256 248,248" fill="url(#sparkGrad)" />
+</svg>

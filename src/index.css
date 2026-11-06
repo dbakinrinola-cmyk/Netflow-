@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a0f1d;
+    color: #f1f5f9;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Smooth active press and tap highlights */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism subtle surface helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 33, 58, 0.85);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.electric-glow {
+  box-shadow: 0 0 24px -4px rgba(37, 99, 235, 0.35);
+}
+
+/* Opening cinematic animation keyframes */
+@keyframes drawStroke {
+  0% {
+    stroke-dashoffset: 1600;
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseParticle {
+  0%, 100% {
+    transform: scale(0.85);
+    filter: drop-shadow(0 0 10px #38bdf8);
+  }
+  50% {
+    transform: scale(1.35);
+    filter: drop-shadow(0 0 32px #60a5fa);
+  }
+}
+
+@keyframes glowBreathing {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
